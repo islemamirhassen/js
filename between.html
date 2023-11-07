@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function Between(){
+       let A= document.getElementById("A").value;
+       let B= document.getElementById("B").value;
+       document.getElementById("C").value=Math.floor(A/10)*1000+(B*10)+(A%10) ;
+
+
+
+
+
+      }
+    </script>
+</head>
+<body>
+    <label>A:</label>
+  <input type="text" id="A" ><br>
+  <label>B:</label>
+  <input type="text" id="B" ><br>
+  <button type="button" onclick="Between()" >co input</button><br>
+  <label>C:</label>
+  <input type="text" id="C" ><br>
+
+</body>
+</html>

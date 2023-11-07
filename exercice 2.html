@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function inversion(){ 
+          let a=document.getElementById("A").value;
+          let u=(a%10);
+          let d=Math.floor((a%100)/10);
+          let c=Math.floor(a/100);
+          console.log("c=",c," d=",d," u=" ,u);
+          document.getElementById("B").value=c+d*10+u*100;
+    
+    }
+    </script>
+</head>
+<body>
+    <label>A:</label>
+  <input type="text" id="A" ><br>
+  <button type="button" onclick="inversion()" >inversion</button><br>
+  <label>B:</label>
+  <input type="text" id="B" ><br>
+    
+</body>
+</html>
