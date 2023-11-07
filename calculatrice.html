@@ -5,27 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        table, th, td {
+  text-align: center;
+}
         .resulta {
           width: 30px;;
 
         }</style>
  <script>
-    function aff1(){
+    function aff(){
        
-        document.getElementById("number").value= (document.getElementById(a).value ;
-    }
+        document.getElementById("number").value+=event.target.id;  
+}
+function compute() {
+    document.getElementById("number").value= eval(document.getElementById("number").value);
+
+}
         
-    
-    
     </script>
 
     </style>
 </head>
 <body>
-<input id="number" type="number"><br>
-<button id="1" onclick=aff1() value="1">1</button>  <button>2</button>  <button>3</button> <button>+</button><br>
-<button >4</button>  <button>5</button>  <button>6</button> <button>-</button><br>
-<button >7</button>  <button>8</button>  <button>9</button> <button>*</button><br>
-<button >0</button>  <button>.</button>  <button>+</button> <button>/</button><br>
-</body>
+    <table>
+        <tr><th><button>CE</button></th>
+            <th colspan="3">
+                <input id="number" >
+            </th>
+        </tr>
+        <tr>
+            <td><button id="1" onclick=aff() >1</button></td>
+            <td><button id="2" onclick=aff()>2</button></td> 
+            <td><button id="3" onclick=aff()>3</button>
+            <td><button id="+" onclick=aff()>+</button></td>
+        </tr>
+        <tr>
+            <td><button id="4" onclick=aff() >4</button></td>  
+            <td><button id="5" onclick=aff()>5</button></td>  
+            <td><button id="6" onclick=aff()>6</button></td> 
+            <td><button id="-" onclick=aff()>-</button></td>
+        </tr>
+        <tr>
+            <td><button id="7" onclick=aff() >7</button></td>  
+            <td><button id="8" onclick=aff()>8</button></td>  
+            <td><button id="9" onclick=aff()>9</button></td> 
+            <td><button id="*" onclick=aff()>*</button></td>
+        </tr>
+        <tr>
+            <td><button id="0" onclick=aff() >0</button></td>  
+            <td><button id="." onclick=aff()>.</button></td>  
+            <td><button id="=" onclick=compute()>=</button></td> 
+            <td><button id="/" onclick=aff()>/</button></td>
+        </tr>
+               </table></body>
 </html>
