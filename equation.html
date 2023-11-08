@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display:inline-block;
+            width: 10%;
+        }
+        
+    </style>
+    <script>
+        function resolve(){
+            let a=parseInt(document.getElementById("a").value);
+            let b=parseInt(document.getElementById("b").value);
+            let c=parseInt(document.getElementById("c").value);
+            console.log("a=",a);
+            let delta=b*b-4*a*c ;
+            console.log("delta=",delta);
+            if(delta>0){
+                let x1=(-b-Math.sqrt(delta))/(2*a );
+                let x2=(-b+Math.sqrt(delta))/(2*a );
+                document.getElementById("res").innerHTML="deux solutions: x1="+x1 +"   x2="+x2 ;
+            }
+            else if (delta==0){
+                let x1=-b/(2*a);
+                document.getElementById("res").innerHTML="solutions double: x1=x2"+x1 ;
+                }
+            else 
+            document.getElementById("res").innerHTML="pas de solution";
+}
+
+        
+
+    </script>
+</head>
+<body>
+    
+<input type="text" id="a"><label> x<sup>2</sup>+</label><input id="b"><label for=""> x+</label><input id="c"><label>=0</label>
+<button onclick="resolve()">Résoudre</button>
+<p id="res"></p>
+</body>
+</html>
