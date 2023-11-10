@@ -5,16 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const images=["as.png","eight.png","king.png","three.png","eight.png","as.png","king.png","three.png"];
+        let nbtir=0; 
+        let id1,id2 ;
+        let tour="j1" ;
+        let score1=0;
+        let score2=0;
+
+        const cards=["as.png","five.png","king.png","three.png"];
+        const images=[];
+        const nbcards=[0,0,0,0];
+
+        function init(){
+            for(let i=0 ;i<cards.length*2;i++){
+                let tir;
+                do{
+                     tir=Math.floor(Math.random() * cards.length);
+                     
+
+                }
+                while(nbcards[tir]>=2);
+                
+                images.push(cards[tir]);
+                nbcards[tir]++;
+            
+
+            }
+            console.log("image:",images);
+
+
+        }
+        
+        function reversetime(){
+            document.getElementById(id1).src="./cards/images.png";
+            document.getElementById(id2).src="./cards/images.png";
+            
+            if (tour=="j1")
+                tour="j2";
+            else
+                tour="j1";
+            document.getElementById("tour").value =tour ;
+
+        
+        }
         function card(){
             console.log("id=",event.target.id);
             document.getElementById(event.target.id).src="./cards/"+images[event.target.id];
-          
-       
+            
+            nbtir +=1;
+            if(nbtir==1){
 
+                id1=event.target.id ;
+            } 
+            else  {//c'est le 2éme tir:verification tour et calcul de score //
+                id2=event.target.id ;
+                console.log("nbtir:",nbtir);
+                if (images[id1]!=images[id2]){
+                    setTimeout(reversetime, 1200);
+                }else{ 
+                    if (tour=="j1"){
+                        score1++;
+                        document.getElementById("score1").value=score1 ;
+                    }  
+                    else {
+                        score2++;
+                        document.getElementById("score2").value=score2;
+                    }
+                }
+                nbtir=0 ;
+            }
+                
+                
+            
         }
 
 
+init();
 
 
     </script>
@@ -28,7 +93,11 @@
     <img src="./cards/images.png" alt="as"id="4" onclick="card()">
     <img src="./cards/images.png" alt="as"id="5" onclick="card()">
     <img src="./cards/images.png" alt="as"id="6" onclick="card()">
-    <img src="./cards/images.png" alt="as"id="7" onclick="card()">
+    <img src="./cards/images.png" alt="as"id="7" onclick="card()"><br>
+
+    <label>tour:</label><input id="tour" value="j1"><br>
+    <label>score1:</label><input id="score1"><br>
+    <label>score1:</label><input id="score2"><br>
 
     
   
