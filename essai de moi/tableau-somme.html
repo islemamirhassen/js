@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let somme=0;
+        const cars=[];
+        function result(){
+            let a=document.getElementById("entier").value;
+           somme+= parseInt(a);
+            cars.push(a);
+            document.getElementById("aff").innerHTML=cars;
+            cars.sort(function(a, b){return a - b});
+            document.getElementById("Min").innerHTML=cars[0];
+            
+            document.getElementById("max").innerHTML=cars[cars.length-1];
+            document.getElementById("tri").innerHTML=cars;
+            document.getElementById("somme").innerHTML=somme;
+         
+        }
+
+
+
+
+
+        
+    </script>
+</head>
+<body>
+    <div>
+        <label>donner un entier:</label><input id="entier" onchange="result()"></div><br>
+        <label>tableau:</label><label id="aff"></label><br>
+        <label>Min:</label><label id="Min"></label><br>
+        <label>Max:</label><label id="max"></label><br>
+        <label>somme:</label><label id="somme"></label><br>
+        <label>tri:</label><label id="tri"></label><br>
+    
+</body>
+</html>
