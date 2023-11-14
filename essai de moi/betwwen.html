@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function between(){
+    let A= document.getElementById("A").value;
+    let B= document.getElementById("B").value;
+    document.getElementById("C").innerHTML=(Math.floor(A/10))*1000+(B*10)+(A%10);
+    }
+    </script>
+</head>
+
+    <label>A :</label> 
+        <input id="A" type="text"><br>
+    <label>B :  </label>
+        <input id="B" type="text"><br>
+    <button type="button" onclick="between()"> between </button><br>
+    <label id="C">C :</label>
+        
+</body>
+</html>
