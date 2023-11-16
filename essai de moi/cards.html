@@ -10,7 +10,24 @@
         let tour="j1";
         let score1=0;
         let score2=0;
-        const images=["As.png","three.png","two.png","king.png","As.png","three.png","two.png","king.png"];
+        const cards=["As.png","three.png","two.png","king.png",];
+        const images=[];
+        const nbcards=[0,0,0,0];
+        function init(){
+            for(let i=0;i<cards.length;i++){
+                let tir;
+                do{
+                    tir=Math.floor(rondom() * cards.length);
+                }
+                while(nbcards[tir]<=2);
+                    images.push(cards[tir]);
+                    nbcards[tir]++;
+                    
+                
+            
+
+            }
+        }
         function reversetime(){
             document.getElementByI(id1).src="./cards2/images.png";
             document.getElementByI(id2).src="./cards2/images.png";
@@ -19,7 +36,6 @@
             else
             tour="j1";
             document.getElementById("tour").value=tour;
-
         }
         function aff(){
             document.getElementById(event.target.id).src="./cards2/"+images[event.target.id];
@@ -38,7 +54,7 @@
                         document.getElementById("score1").value=score1;
                     }else{
                         score2++;
-                        document.getElementById("score2").value=scpre2;
+                        document.getElementById("score2").value=score2;
                     }
                 }
                 nbtir=0;
@@ -48,6 +64,7 @@
             }
             
         }
+        init();
         
 
     </script>
